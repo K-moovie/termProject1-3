@@ -31,7 +31,7 @@ public class App extends Application {
         return fxmlLoader.load();
     }
     /// 정대겸 테스트 파일 ///
-    
+    //hello world//
     public static void main(String[] args) {
         launch();
     }
