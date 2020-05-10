@@ -30,7 +30,8 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
-    /// 정대겸 테스트 파일
+    /// 정대겸 테스트 파일 ///
+    
     public static void main(String[] args) {
         launch();
     }
