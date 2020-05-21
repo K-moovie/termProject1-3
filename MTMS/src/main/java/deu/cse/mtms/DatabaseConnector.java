@@ -16,7 +16,7 @@ import java.sql.Statement;
  */
 public class DatabaseConnector {
     private static final DatabaseConnector dbConnector = new DatabaseConnector();
-    private static final String url = "jdbc:mysql://35.223.119.57:3306/testdb";
+    private static final String url = "jdbc:mysql://35.223.119.57:3306/testdb?useSSL=false";
     private static final String id = "root";
     private static final String pw = "root";
     private Connection conn = null;
