@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import java.sql.Statement;
 import java.io.IOException;
 
 /**
@@ -14,7 +14,6 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
-
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"), 640, 480);
@@ -32,7 +31,12 @@ public class App extends Application {
     }
     /// 정대겸 테스트 파일 ///
     public static void main(String[] args) {
+         if(DatabaseConnector.getInstance().init());
+        {
+            System.setProperty("prism.lcdtext", "false");
+            System.setProperty("prism.text", "t2k");
+            launch(args);
+        }
         launch();
     }
-
 }
