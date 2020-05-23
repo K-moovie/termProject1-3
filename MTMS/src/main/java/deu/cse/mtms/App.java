@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.sql.Statement;
 import java.io.IOException;
 
 /**
@@ -16,7 +15,7 @@ public class App extends Application {
     private static Scene scene;
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("IntroView"));
         stage.setScene(scene);
         stage.show();
     }
