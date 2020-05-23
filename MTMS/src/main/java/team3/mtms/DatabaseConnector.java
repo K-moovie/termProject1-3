@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package deu.cse.mtms;
+package team3.mtms;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- *
- * @author LG
- */
 public class DatabaseConnector {
     private static final DatabaseConnector dbConnector = new DatabaseConnector();
     private static final String url = "jdbc:mysql://35.223.119.57:3306/testdb?useSSL=false";
@@ -25,12 +16,9 @@ public class DatabaseConnector {
     public boolean init(){   
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            //jdbc:mysql://35.223.119.57:3306/testdb?characterEncoding=utf8&amp;useSSL=false&amp;autoReconnection=true
-            //jdbc:mysql://35.223.119.57:3306/testdb
-            //String url = "jdbc:mysql://35.223.119.57:3306/testdb?characterEncoding=utf8&amp;useSSL=false&amp;autoReconnection=true";
             conn = DriverManager.getConnection(url, id, pw);
             stmt = conn.createStatement();
-            System.out.println("연결 성공");
+            System.out.println("서버에 접속하셨습니다.");
             return true;
         }
         catch(ClassNotFoundException e){
