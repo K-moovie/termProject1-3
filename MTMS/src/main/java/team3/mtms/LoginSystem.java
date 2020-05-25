@@ -1,5 +1,6 @@
 package team3.mtms;
 
+import movie.manage.MovieManage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -32,8 +33,10 @@ public class LoginSystem {
                 rs = DatabaseConnector.getInstance().getStatement().executeQuery(query);
                 rs.next(); // 칼럼 받아오는 코드
                 if (rs.getString("admin_pw").equals(pw)) {
-                    // mypage 내 정보 추가 하기.
-                    System.out.println(id + "관리자님 환영합니다.");
+                    // mypage 내 정보 추가 하기
+                    System.out.println(id + " 관리자님 환영합니다.");
+                    MovieManage movieManage = new MovieManage();
+                    movieManage.menu();
                 } else {
                     return false;
                 }
