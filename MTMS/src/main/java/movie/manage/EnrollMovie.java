@@ -9,7 +9,7 @@ public class EnrollMovie {
     
     Scanner sc = new Scanner(System.in);
     private String query;
-    ResultSet rs = null;
+    private ResultSet rs = null;
     
     
     public Movie enrollMovie(){
