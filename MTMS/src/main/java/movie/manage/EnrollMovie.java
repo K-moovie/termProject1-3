@@ -13,7 +13,7 @@ public class EnrollMovie {
     Scanner sc = new Scanner(System.in);
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     private String query;
-    ResultSet rs = null;
+    private ResultSet rs = null;
     
     
     
