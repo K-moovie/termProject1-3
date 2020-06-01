@@ -30,9 +30,7 @@ public class EnrollMovie {
         String [] jenr2= jenr1.split(",");
         String rating1 ="A,B,C,D";
         String [] rating2 =rating1.split(",");
-        
-        tmpId = "105";
-        
+                      
         System.out.println("영화를 등록합니다.");
         System.out.println("영화 제목을 입력해주세요");
         tmpTitle = br.readLine();
@@ -51,8 +49,8 @@ public class EnrollMovie {
         select = sc.nextInt();
         tmpRating = rating2[select-1];
         
-        Movie tmpMovie = new Movie(tmpId,tmpTitle,tmpCategory,tmpSummary,tmpDirector,tmpRating);
-        query = "INSERT INTO movie VALUES ('" + tmpId + "','" + tmpTitle + "','" + tmpRating + "','"
+        Movie tmpMovie = new Movie(tmpTitle,tmpCategory,tmpSummary,tmpDirector,tmpRating);
+        query = "INSERT INTO movie VALUES ('" + tmpTitle + "','" + tmpRating + "','"
                 + tmpCategory + "','" + tmpSummary + "','" + tmpDirector + "')";
         try{
             DatabaseConnector.getInstance().getStatement().executeUpdate(query);

@@ -21,8 +21,8 @@ public class MovieManage {
             case 1 : // 영화 등록
                 Movie addMovie = new Movie();
                 EnrollMovie enroll = new EnrollMovie();
-                addMovie = enroll.enrollMovie();
-                movieList.add(addMovie); //movieList에 추가
+//                addMovie = enroll.enrollMovie();
+//                movieList.add(addMovie); //movieList에 추가
                 break;
             case 2 :
                 SearchMovie search = new SearchMovie();
