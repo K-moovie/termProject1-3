@@ -45,7 +45,7 @@ public class LoginSystem {
                 rs.next(); // 칼럼 받아오는 코드
                 if (rs.getString("user_pw").equals(pw)) {
                     // mypage 내 정보 추가 하기.
-                    System.out.println(id + "고객님 환영합니다.");
+                    MyInformation.getInsetance().setMyInformation(rs.getString("user_id"), rs.getString("name"), rs.getString("rating"), rs.getString("phone_num"), rs.getInt("age"));
                     CustomerMenu customerMenu = new CustomerMenu();
                     customerMenu.menu();
                 } else {
@@ -54,7 +54,7 @@ public class LoginSystem {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("올바른 ID, PW가 아닙니다. 다시 로그인해 주세요.");
             return false;
         }
         return true;

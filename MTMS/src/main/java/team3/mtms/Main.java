@@ -12,6 +12,9 @@ public class Main {
         dbConnector.init();
 
         LoginSystem ls = new LoginSystem();
-//        ls.checkLogin();
+        while(true) {
+            if(ls.checkLogin())
+                break;
+        }
     }
 }

@@ -21,7 +21,8 @@ public class Movie {
         
     }
 
-    public Movie( String title, String category, String summary, String director, String rating){
+    public Movie(String id, String title, String category, String summary, String director, String rating){
+        this.id = id;
         this.title = title;
         this.category = category;
         this.summary = summary;

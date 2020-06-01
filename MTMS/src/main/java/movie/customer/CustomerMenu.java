@@ -2,22 +2,25 @@ package movie.customer;
 
 import java.sql.SQLException;
 import java.util.Scanner;
+import movie.discount.*;
+import team3.mtms.MyInformation;
 
 public class CustomerMenu {
 
     private Scanner sc = new Scanner(System.in);
     private PromotionList pt;
     private PromotionDisplay pd;
+
     public CustomerMenu() throws SQLException {
         pt = new PromotionList();
         pt.setPromotionCount();
         pd = new PromotionDisplay(pt);
-    } 
-    
+    }
+
     public void menu() throws SQLException {  // 관리자 메뉴
         int select;
         boolean flag = false;
-        
+
         while (true) {
             pt.getPromotionCount();
             System.out.println("원하시는 기능을 선택해주세요\n"
@@ -32,7 +35,8 @@ public class CustomerMenu {
                     pt.removeObserver(pd);
                     break;
                 case 2:
-
+                    Discount d = new Discount();
+                    d.discount();
                     break;
                 case 3:
 
@@ -42,7 +46,7 @@ public class CustomerMenu {
                     System.out.println("로그아웃중...");
                     break;
             }
-            if(flag) {
+            if (flag) {
                 System.out.println("프로그램 종료");
                 break;
             }

@@ -2,23 +2,17 @@ package movie.manage;
 
 import team3.mtms.DatabaseConnector;
 import java.util.Scanner;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class EnrollMovie {
     
     Scanner sc = new Scanner(System.in);
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     private String query;
     private ResultSet rs = null;
     
     
-    
-    public Movie enrollMovie() throws IOException{
-        
+    public Movie enrollMovie(){
         String tmpId;
         String tmpTitle;
         String tmpCategory;
@@ -30,11 +24,12 @@ public class EnrollMovie {
         String [] jenr2= jenr1.split(",");
         String rating1 ="A,B,C,D";
         String [] rating2 =rating1.split(",");
-                      
+        
+        tmpId = "100";
+        
         System.out.println("영화를 등록합니다.");
         System.out.println("영화 제목을 입력해주세요");
-        tmpTitle = br.readLine();
-        System.out.println(tmpTitle);
+        tmpTitle = sc.nextLine();
         System.out.println("영화 장르를 선택해주세요\n"  // 사용자 입력시 오타가나면 곤란하기 때문에 숫자로 선택
                 + "1. 코미디  2. 액션  3. 스릴러  4. SF  5. 판타지  6. 로맨스");
         select = sc.nextInt();
@@ -49,8 +44,8 @@ public class EnrollMovie {
         select = sc.nextInt();
         tmpRating = rating2[select-1];
         
-        Movie tmpMovie = new Movie(tmpTitle,tmpCategory,tmpSummary,tmpDirector,tmpRating);
-        query = "INSERT INTO movie VALUES ('" + tmpTitle + "','" + tmpRating + "','"
+        Movie tmpMovie = new Movie(tmpId,tmpTitle,tmpCategory,tmpSummary,tmpDirector,tmpRating);
+        query = "INSERT INTO movie VALUES ('" + tmpId + "','" + tmpTitle + "','" + tmpRating + "','"
                 + tmpCategory + "','" + tmpSummary + "','" + tmpDirector + "')";
         try{
             DatabaseConnector.getInstance().getStatement().executeUpdate(query);
